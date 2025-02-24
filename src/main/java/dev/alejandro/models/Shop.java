@@ -30,6 +30,12 @@ public class Shop {
         return this.shopID;
     }
 
+    public List<Computer> getComputers(){
+        return this.computers;
+    }
 
+    public void addComputer(Computer computer){
+        this.computers.add(computer);
+    }
 
 }
