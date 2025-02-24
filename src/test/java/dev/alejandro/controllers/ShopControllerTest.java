@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,30 +15,35 @@ import dev.alejandro.models.Shop;
 
 public class ShopControllerTest {
 
+    private ShopController controller;
+    private Shop shop;
+    private Computer computer;
+
+    @BeforeEach
+    void setUp(){
+        shop = new Shop("Mercadona", "Juan Roig", "53423423T");
+        controller = new ShopController(shop);
+        computer = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
+        controller.addComputerToShop(computer);
+    }
+
     @Test
     @DisplayName("Test addComputerToShop method adds computer to the shop and showShopComputers returns the computers")
     void test_add_computers_to_the_shop_and_show_them(){
 
-        Computer computer = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
-        Shop shop = new Shop("Mercadona", "Juan Roig", "53423423T");
-        ShopController controller = new ShopController(shop);
+        Computer computer1 = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
 
-        controller.addComputerToShop(computer);
+        controller.addComputerToShop(computer1);
 
-        assertThat(controller.showShopComputers(), hasItem(computer));
+        assertThat(controller.showShopComputers(), hasItem(computer1));
     }
 
     @Test
     @DisplayName("Test removeComputerByBrand method removes computer from the shop")
     void test_removes_computers_of_the_shop_by_brand(){
 
-        Shop shop = new Shop("Mercadona", "Juan Roig", "53423423T");
-        ShopController controller = new ShopController(shop);
-
-        Computer computer = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
         Computer computer1 = new Computer("ASUS", "12GB", "2.4GHz", "Linux", 2.50);
 
-        controller.addComputerToShop(computer);
         controller.addComputerToShop(computer1);
 
         assertThat(controller.showShopComputers(), hasItem(computer));
@@ -45,10 +51,6 @@ public class ShopControllerTest {
         controller.removeByBrand("Acer");
 
         assertThat(controller.showShopComputers(), not(hasItem(hasProperty("brand", is("Acer")))));
-        
-
-       
-
         
     }
 
