@@ -39,5 +39,14 @@ public class ShopTest {
         assertThat(shop.getShopID(), is("53423423T"));
     }
 
+    @Test
+    @DisplayName("The addComputer method adds a computer to the shop")
+    void test_returns_list_of_computers_with_added_computer(){
+
+        shop.addComputer(new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50));
+
+        assertThat(shop.getComputers().size(), is(1));
+    }
+
 
 }
