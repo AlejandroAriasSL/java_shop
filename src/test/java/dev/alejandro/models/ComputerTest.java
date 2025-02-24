@@ -40,4 +40,11 @@ public class ComputerTest {
         assertThat(computer.getCPU(), is("2.4GHz"));
     }
 
+    @Test
+    @DisplayName("Test getOS method returns the CPU of the computer")
+    void test_returns_os_of_computer(){
+
+        assertThat(computer.getOS(), is("Linux"));
+    }
+
 }
