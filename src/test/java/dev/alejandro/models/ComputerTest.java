@@ -33,4 +33,11 @@ public class ComputerTest {
         
     }
 
+    @Test
+    @DisplayName("Test getCPU method returns the CPU of the computer")
+    void test_returns_cpu_of_computer(){
+
+        assertThat(computer.getCPU(), is("2.4GHz"));
+    }
+
 }
