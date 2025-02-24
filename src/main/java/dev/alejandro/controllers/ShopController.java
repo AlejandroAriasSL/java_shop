@@ -25,4 +25,8 @@ public class ShopController {
         shop.removeComputerByBrand(brand);
     }
 
+    public Computer filterComputersByBrand(String brand){
+        return shop.getComputerByBrand(brand);
+    }
+
 }
