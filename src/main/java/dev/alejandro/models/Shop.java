@@ -38,4 +38,9 @@ public class Shop {
         this.computers.add(computer);
     }
 
+    public void removeComputerByBrand(String brand){
+        computers.
+        removeIf(computer -> brand.equals(computer.getBrand()));
+    }
+
 }
