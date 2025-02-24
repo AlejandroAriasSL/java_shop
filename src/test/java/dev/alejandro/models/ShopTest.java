@@ -32,5 +32,12 @@ public class ShopTest {
         assertThat(shop.getShopOwner(), is("Juan Roig"));
     }
 
+    @Test
+    @DisplayName("The getShopID method returns the identification number of the shop")
+    void test_returns_identification_number_of_shop(){
+
+        assertThat(shop.getShopID(), is("53423423T"));
+    }
+
 
 }
