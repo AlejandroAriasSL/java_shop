@@ -23,6 +23,10 @@ public class Computer {
     public String getRAM(){
         return this.ram;
     }
+
+    public String getCPU(){
+        return this.cpu;
+    }
     
 
     
