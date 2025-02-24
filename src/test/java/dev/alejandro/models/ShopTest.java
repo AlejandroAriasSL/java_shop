@@ -1,7 +1,10 @@
 package dev.alejandro.models;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -47,6 +50,22 @@ public class ShopTest {
 
         assertThat(shop.getComputers().size(), is(1));
     }
+
+    @Test
+    @DisplayName("The removeComputerByBrand method removes a computer from the shop")
+    void test_returns_list_of_computers_with_removed_computer(){
+
+        shop.addComputer(new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50));
+        shop.addComputer(new Computer("ASUS", "12GB", "2.4GHz", "Linux", 2.50));
+
+        assertThat(shop.getComputers(), hasItem(hasProperty("brand", is("ASUS"))));
+
+        shop.removeComputerByBrand("ASUS");
+
+        assertThat(shop.getComputers(), not(hasItem(hasProperty("brand", is("ASUS")))));
+    }
+
+
 
 
 }
