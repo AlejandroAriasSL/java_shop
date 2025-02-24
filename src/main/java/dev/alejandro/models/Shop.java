@@ -43,4 +43,12 @@ public class Shop {
         removeIf(computer -> brand.equals(computer.getBrand()));
     }
 
+    public Computer getComputerByBrand(String brand){
+        return this.computers
+        .stream()
+        .filter(computer -> brand.equals(computer.getBrand()))
+        .findFirst()
+        .orElse(null);
+    }
+
 }
