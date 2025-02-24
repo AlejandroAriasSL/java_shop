@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -52,6 +53,13 @@ public class ShopControllerTest {
 
         assertThat(controller.showShopComputers(), not(hasItem(hasProperty("brand", is("Acer")))));
         
+    }
+
+    @Test
+    @DisplayName("Test filterComputersByBrand method filters computer by brand")
+    void test_filters_computers_by_brand(){
+
+        assertEquals(controller.filterComputersByBrand("Acer"), computer);
     }
 
 
