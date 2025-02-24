@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -63,6 +64,20 @@ public class ShopTest {
         shop.removeComputerByBrand("ASUS");
 
         assertThat(shop.getComputers(), not(hasItem(hasProperty("brand", is("ASUS")))));
+    }
+
+    @Test
+    @DisplayName("The getComputerByBrand method finds a computer in the shop by its brand")
+    void test_returns_computer_by_its_brand(){
+
+        Computer computer1 = new Computer("ASUS", "12GB", "2.4GHz", "Linux", 2.50);
+        Computer computer2 = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
+
+        shop.addComputer(computer1);
+        shop.addComputer(computer2);
+
+
+        assertEquals(shop.getComputerByBrand("ASUS"), computer1);
     }
 
 
