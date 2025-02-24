@@ -17,4 +17,14 @@ public class ComputerTest {
         assertThat(computer.getBrand(), is("Acer"));
     }
 
+    @Test
+    @DisplayName("The getRAM method returns the RAM of the computer")
+    void test_returns_ram_of_computer(){
+
+        Computer computer = new Computer("Acer", "12GB", "2.4GHz", "Linux", 2.50);
+
+        assertThat(computer.getRAM(), is("12GB"));
+        
+    }
+
 }
