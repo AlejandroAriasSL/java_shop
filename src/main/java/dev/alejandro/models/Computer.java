@@ -32,7 +32,9 @@ public class Computer {
         return this.os;
     }
     
-
+    public double getPrice(){
+        return this.price;
+    }
     
 
 }
