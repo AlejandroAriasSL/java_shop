@@ -17,4 +17,14 @@ public class ShopTest {
         assertThat(shop.getShopName(), is("Mercadona"));
     }
 
+    @Test
+    @DisplayName("The getShopOwner method returns the name of the owner")
+    void test_returns_name_of_shop_owner(){
+
+        Shop shop = new Shop("Mercadona", "Juan Roig", "53423423T");
+
+        assertThat(shop.getShopOwner(), is("Juan Roig"));
+    }
+
+
 }
