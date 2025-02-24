@@ -27,6 +27,10 @@ public class Computer {
     public String getCPU(){
         return this.cpu;
     }
+
+    public String getOS(){
+        return this.os;
+    }
     
 
     
