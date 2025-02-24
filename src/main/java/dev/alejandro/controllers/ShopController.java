@@ -21,5 +21,8 @@ public class ShopController {
         return shop.getComputers();
     }
 
+    public void removeByBrand(String brand){
+        shop.removeComputerByBrand(brand);
+    }
 
 }
