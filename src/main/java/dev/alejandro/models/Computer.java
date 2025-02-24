@@ -19,6 +19,10 @@ public class Computer {
     public String getBrand(){
         return this.brand;
     }
+
+    public String getRAM(){
+        return this.ram;
+    }
     
 
     
