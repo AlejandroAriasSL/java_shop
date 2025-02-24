@@ -47,4 +47,11 @@ public class ComputerTest {
         assertThat(computer.getOS(), is("Linux"));
     }
 
+    @Test
+    @DisplayName("Test getPrice method returns the CPU of the computer")
+    void test_returns_price_of_computer(){
+
+        assertThat(computer.getPrice(), is(2.50));
+    }
+
 }
