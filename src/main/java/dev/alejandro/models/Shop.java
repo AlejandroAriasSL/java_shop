@@ -26,6 +26,10 @@ public class Shop {
         return this.shopOwner;
     }
 
+    public String getShopID(){
+        return this.shopID;
+    }
+
 
 
 }
